@@ -113,12 +113,13 @@ class ClassroomHelper:
                         continue
                     if coursework.get('courseWork')[0].get('id') == submission.get("courseWorkId"):
                         desc = ""
-                        if len(coursework.get('courseWork')[0].get('description').split('\n')[0]) > 100:
+                        if len(coursework.get('courseWork')[0].get('description',
+                                                               '').split('\n')[0]) > 100:
                             desc = coursework.get('courseWork')[0].get(
                                 'description').split('\n')[0][0:100] + "..."
                         else:
                             desc = coursework.get('courseWork')[0].get(
-                                'description').split('\n')[0]
+                                'description', '').split('\n')[0]
 
                         Logger.info("* " + coursework.get('courseWork')[0].get(
                             'title') + " (" + coursework.get('courseWork')[0].get('id') + ")")
