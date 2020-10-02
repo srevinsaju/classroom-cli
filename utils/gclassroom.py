@@ -109,6 +109,8 @@ class ClassroomHelper:
             Logger.notice("Assignments: ")
             for submission in dueAssignments:
                 for coursework in courseWork:
+                    if not coursework.get('courseWork'):
+                        continue
                     if coursework.get('courseWork')[0].get('id') == submission.get("courseWorkId"):
                         desc = ""
                         if len(coursework.get('courseWork')[0].get('description').split('\n')[0]) > 100:
