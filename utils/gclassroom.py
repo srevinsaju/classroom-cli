@@ -86,7 +86,7 @@ class ClassroomHelper:
 
             if not assignmentList:
                 Logger.success("No assignments due!")
-                return
+                continue
 
             # Get submisions
             for assignment in assignmentList:
